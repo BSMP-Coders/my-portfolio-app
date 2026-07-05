@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Entry — Dev Journal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        nav {
+            background-color: #2c3e50;
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: bold;
+        }
+        nav a:hover { color: #3498db; }
+        h1 { color: #2c3e50; }
+        form {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #333;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 15px;
+            box-sizing: border-box;
+        }
+        textarea { height: 100px; resize: vertical; }
+        button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 12px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover { background-color: #2980b9; }
+        .error {
+            background: #ffe0e0;
+            color: #c0392b;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/add">Add Entry</a>
+    </nav>
+
+    <h1>➕ Add Entry</h1>
+    <p>Record what you built and learned today.</p>
+
+    {% if error %}
+    <div class="error">{{ error }}</div>
+    {% endif %}
+
+    <form method="POST" action="/add">
+        <label for="title">Title *</label>
+        <input type="text" id="title" name="title" placeholder="What did you build? (e.g., AI Chatbot)" required>
+
+        <label for="date">Date</label>
+        <input type="date" id="date" name="date" value="{{ today }}">
+
+        <label for="summary">What I Built *</label>
+        <textarea id="summary" name="summary" placeholder="One sentence about your project" required></textarea>
+
+        <label for="learned">What I Learned</label>
+        <textarea id="learned" name="learned" placeholder="2-3 things you figured out today"></textarea>
+
+        <label for="coolest">Coolest Thing</label>
+        <input type="text" id="coolest" name="coolest" placeholder="The moment you were most proud of">
+
+        <label for="screenshot">Screenshot URL (optional)</label>
+        <input type="text" id="screenshot" name="screenshot" placeholder="Paste image URL or leave blank">
+
+        <button type="submit">Save Entry ✅</button>
+    </form>
+</body>
+</html>

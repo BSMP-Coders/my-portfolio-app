@@ -1,0 +1,19 @@
+# BSMP 2026 — Flask (both tracks). All lessons run with `python app.py`.
+
+# Core (every lesson)
+Flask==3.0.3
+openai>=1.0.0,<2.0.0
+python-dotenv
+
+# Lesson 3 — AI agents + tools
+requests          # function-calling tools (e.g. Wikipedia)
+wikipedia         # Wikipedia tool
+fastmcp           # advanced: real MCP server + client
+
+# Lesson 4 — RAG + AI models
+pypdf             # PDF text extraction
+numpy             # embedding math (cosine similarity)
+faiss-cpu         # intermediate bonus: vector search
+
+# Lesson 2 advanced (SQLite login) uses sqlite3 + werkzeug.security (stdlib / Flask dep — no install).
+# Lesson 4 advanced (voice + image) uses the same openai client; no extra packages.

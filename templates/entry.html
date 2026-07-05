@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ entry.title }} — Dev Journal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        nav {
+            background-color: #2c3e50;
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: bold;
+        }
+        nav a:hover { color: #3498db; }
+        .entry {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .entry h1 { color: #2c3e50; margin-top: 0; }
+        .date { color: #999; font-size: 0.9em; }
+        h3 { color: #2c3e50; margin-top: 20px; }
+        .content { line-height: 1.6; }
+        .screenshot {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/add">Add Entry</a>
+    </nav>
+
+    <div class="entry">
+        <h1>{{ entry.title }}</h1>
+        <span class="date">{{ entry.date }}</span>
+
+        <h3>What I Built</h3>
+        <p class="content">{{ entry.summary }}</p>
+
+        {% if entry.learned %}
+        <h3>What I Learned</h3>
+        <p class="content">{{ entry.learned }}</p>
+        {% endif %}
+
+        {% if entry.coolest %}
+        <h3>Coolest Thing</h3>
+        <p class="content">{{ entry.coolest }}</p>
+        {% endif %}
+
+        {% if entry.screenshot %}
+        <h3>Screenshot</h3>
+        <img src="{{ entry.screenshot }}" alt="Screenshot" class="screenshot">
+        {% endif %}
+
+        <a href="/" class="back-link">← Back to all entries</a>
+    </div>
+</body>
+</html>

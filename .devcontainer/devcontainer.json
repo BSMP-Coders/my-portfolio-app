@@ -1,0 +1,44 @@
+{
+  "name": "bsmp26-dev-lessons",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11-bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/node:2.0.0": {
+      "version": "18"
+    },
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+      "version": "latest",
+      "moby": false
+    }
+  },
+  "waitFor": "updateContentCommand",
+  "updateContentCommand": "pip install -r requirements.txt",
+  "forwardPorts": [
+    8501,
+    5000,
+    3000
+  ],
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "files.exclude": {
+          "/pycache": true,
+          "/node_modules": true,
+          "**/__pycache__": true,
+          "**/node_modules": true
+        },
+        "chat.newSession.defaultMode": "ask"
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "GitHub.copilot-chat",
+        "GitHub.copilot",
+        "esbenp.prettier-vscode",
+        "vsls-contrib.codetour",
+        "yzhang.markdown-all-in-one",
+        "shd101wyy.markdown-preview-enhanced"
+      ]
+    }
+  }
+}

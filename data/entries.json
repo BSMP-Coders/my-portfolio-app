@@ -1,0 +1,10 @@
+[
+  {
+    "title": "Hello World + AI Chat",
+    "date": "2026-06-01",
+    "summary": "Built my first Flask app with a profile page and an AI chatbot.",
+    "learned": "I learned how to create routes, use Jinja templates, and connect to the OpenAI API. I also learned how HTML forms send data back to Python.",
+    "coolest": "When my chatbot started actually responding to my messages!",
+    "screenshot": ""
+  }
+]
