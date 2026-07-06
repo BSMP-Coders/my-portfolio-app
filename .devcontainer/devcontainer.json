@@ -1,15 +1,6 @@
 {
-  "name": "bsmp26-dev-lessons",
+  "name": "my-portfolio",
   "image": "mcr.microsoft.com/devcontainers/python:3.11-bookworm",
-  "features": {
-    "ghcr.io/devcontainers/features/node:2.0.0": {
-      "version": "18"
-    },
-    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
-      "version": "latest",
-      "moby": false
-    }
-  },
   "waitFor": "updateContentCommand",
   "updateContentCommand": "pip install -r requirements.txt",
   "forwardPorts": [
@@ -23,11 +14,20 @@
         "python.defaultInterpreterPath": "/usr/local/bin/python",
         "files.exclude": {
           "/pycache": true,
-          "/node_modules": true,
-          "**/__pycache__": true,
-          "**/node_modules": true
+          "**/__pycache__": true
         },
-        "chat.newSession.defaultMode": "ask"
+        "chat.newSession.defaultMode": "agent",
+        "chat.planAgent.defaultModel": "gpt-5.4-nano (azure)",
+        "inlineChat.defaultModel": "gpt-5.4-nano (azure)",
+        "chat.exploreAgent.defaultModel": "gpt-5.4-nano (azure)",
+        "github.copilot.nextEditSuggestions.preferredModel": "gpt-5.4-nano (azure)",
+        "github.copilot.selectedCompletionModel": "gpt-5.4-nano (azure)",
+        "github.copilot.chat.askAgent.model": "gpt-5.4-nano (azure)",
+        "github.copilot.chat.executionSubagent.model": "gpt-5.4-nano (azure)",
+        "github.copilot.chat.exploreAgent.model": "gpt-5.4-nano (azure)",
+        "github.copilot.chat.implementAgent.model": "gpt-5.4-nano (azure)",
+        "chat.utilityModel": "azure/",
+        "chat.utilitySmallModel": "azure/"
       },
       "extensions": [
         "ms-python.python",
@@ -35,7 +35,6 @@
         "GitHub.copilot-chat",
         "GitHub.copilot",
         "esbenp.prettier-vscode",
-        "vsls-contrib.codetour",
         "yzhang.markdown-all-in-one",
         "shd101wyy.markdown-preview-enhanced"
       ]
