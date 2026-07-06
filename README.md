@@ -11,7 +11,7 @@ Update it at the end of every class. By the end, you'll have a portfolio showing
 1. Open this Codespace at the end of each class
 2. Run your app
 3. Add a new entry about what you built today
-4. Commit and push your changes
+4. [commit and push changes](https://bsmp-coders.github.io/#/students/Getting-Started?id=_4-submitting-your-homework-assignment-how-to-commit-and-push-changes) your changes
 
 That's it. 2–3 minutes per class.
 
@@ -52,6 +52,10 @@ As you learn new skills, come back and level up your journal:
 | 5 (Games) | Add a streak counter for consecutive classes logged |
 
 Ask Copilot to help you build these!
+
+
+### When your are done [Commit and Push](https://bsmp-coders.github.io/#/students/Getting-Started?id=_4-submitting-your-homework-assignment-how-to-commit-and-push-changes) 
+save your changes by commit and pushing your changes 👉 see how to [commit and push changes](https://bsmp-coders.github.io/#/students/Getting-Started?id=_4-submitting-your-homework-assignment-how-to-commit-and-push-changes)
 
 ---
 
